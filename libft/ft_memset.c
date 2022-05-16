@@ -6,7 +6,7 @@
 /*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 11:28:59 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/05/05 16:45:41 by aldiaz-c         ###   ########.fr       */
+/*   Updated: 2022/05/16 09:54:32 by aldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	b2 = (unsigned char *)b;
 	i = 0;
-	while (len < 0)
+	while (len > 0)
 	{
 		b2[i] = c;
 		i ++;
