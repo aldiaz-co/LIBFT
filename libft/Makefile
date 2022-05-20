@@ -6,7 +6,7 @@
 #    By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/20 11:25:04 by aldiaz-c          #+#    #+#              #
-#    Updated: 2022/05/16 09:38:19 by aldiaz-c         ###   ########.fr        #
+#    Updated: 2022/05/20 15:46:38 by aldiaz-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS =	ft_atoi.c\
 		ft_itoa.c\
 		ft_memchr.c\
 		ft_memcmp.c\
-		ft_memcmp.c\
+		ft_memcpy.c\
 		ft_memmove.c\
 		ft_memset.c\
 		ft_putchar_fd.c\
@@ -47,15 +47,14 @@ SRCS =	ft_atoi.c\
 		ft_tolower.c\
 		ft_toupper.c\
 
-SRCS_BONUS = 	ft_lstnew.c\
+SRCS_BONUS = 	ft_lstadd_back.c\
 				ft_lstadd_front.c\
-				ft_lstsize.c\
-				ft_lstlast.c\
-				ft_lstadd_back.c\
-				ft_lstdelone.c\
 				ft_lstclear.c\
+				ft_lstdelone.c\
 				ft_lstiter.c\
-				ft_lstmap.c\
+				ft_lstlast.c\
+				ft_lstnew.c\
+				ft_lstsize\
 
 OBJS = ${SRCS:.c=.o}
 
