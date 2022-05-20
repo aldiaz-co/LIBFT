@@ -6,95 +6,106 @@
 /*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 16:11:53 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/05/05 18:51:17 by aldiaz-c         ###   ########.fr       */
+/*   Updated: 2022/05/18 16:35:43 by aldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_count_word(const char *s, char c)
+static int	ft_count_words(const char *s, char c)
 {
 	int	i;
-	int	j;
+	int	words_tot;
 
 	i = 0;
-	j = 0;
-	while (s[j])
+	words_tot = 0;
+	while (s[i])
 	{
-		if (s[j] == c)
-			i++;
-		j++;
-	}
-	return (i);
-}
-
-int	ft_count_str(char const *s, char c, int a)
-{
-	int	i;
-
-	i = 0;
-	while (s[a] != c)
-	{
-		a++;
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+			words_tot++;
 		i++;
 	}
-	return (i);
+	return (words_tot);
 }
 
-char	ft_copy(char *dest, const char *s, char c, int a)
+static size_t	ft_size_words(const char *s, char c, int word, int *i)
 {
-	int	y;
+	size_t	j;
 
-	y = 0;
-	while (s[a] != c)
+	*i = 0;
+	j = 0;
+	if (s[0] != c)
+		word--;
+	while (s[*i] && word > 0)
 	{
-		dest[y] = s[a];
-		y++;
-		a++;
-	}
-	return (a);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**tab;
-	int		i;
-	int		a;
-
-	a = 0;
-	tab = malloc(sizeof(tab) * (ft_count_word(s, c) + 1));
-	if (!tab)
-		return (NULL);
-	i = 0;
-	while (s[a])
-	{
-		if (s[a] != c)
+		if (s[*i] == c && (s[(*i) + 1] != c && s[(*i) + 1] != '\0'))
 		{
-			tab[i] = malloc(sizeof(char) * ft_count_str(s, c, a) + 1);
-			if (!tab)
-				return (0);
-			a = ft_copy(tab[i], s, c, a);
-			i++;
+			word--;
 		}
-		a++;
+		(*i)++;
 	}
-	tab[i] = 0;
-	return (tab);
+	while (!word && (s[(*i) + j] != c && s[(*i) + j]))
+		j++;
+	return (j);
 }
 
-/*
-int	main(int c, char *v[])
+static char	*ft_write_words(const char *s, char *matrix, char c, int i)
 {
-    int i = 0;
-    char **tab;
+	int	j;
 
-    if (c!=3)
-        return (0);
-    tab = ft_split(v[1], v[2][0]);
-    while (tab[i])
-    {
-        printf("%s\n", tab[i]);
-        i++;
-    }
-    return (0);
-}*/
+	j = 0;
+	while (s[i + j] != c && s[i + j])
+	{
+		matrix[j] = s[i + j];
+		j++;
+	}
+	matrix[j] = '\0';
+	return (matrix);
+}
+
+static char	*ft_matrix(const char *s, char c, char **matrix, int word)
+{
+	int	k;
+	int	i;
+
+	i = 0;
+	k = 0;
+	matrix[word] = malloc(sizeof(*matrix[word])
+			* ft_size_words(s, c, word + 1, &i) + 1);
+	if (!matrix[word])
+	{
+		while (k < word)
+		{
+			free(matrix[k]);
+			k++;
+		}
+		free(matrix);
+		return (NULL);
+	}
+	matrix[word] = ft_write_words(s, matrix[word], c, i);
+	return (matrix[word]);
+}
+
+char	**ft_split(const char *s, char c)
+{	
+	int		words_tot;
+	int		word;
+	char	**matrix;
+
+	if (!s)
+		return (NULL);
+	word = 0;
+	words_tot = ft_count_words(s, c);
+	matrix = malloc(sizeof(*matrix) * (words_tot + 1));
+	if (!matrix)
+		return (NULL);
+	while (word < words_tot)
+	{
+		matrix[word] = ft_matrix(s, c, matrix, word);
+		if (!matrix[word])
+			return (NULL);
+		word++;
+	}
+	matrix[word] = NULL;
+	return (matrix);
+}

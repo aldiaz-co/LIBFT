@@ -6,7 +6,7 @@
 /*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 10:54:41 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/04/27 12:59:31 by aldiaz-c         ###   ########.fr       */
+/*   Updated: 2022/05/16 18:31:07 by aldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *str, int c, size_t len)
 	ptr_str = (unsigned char *) str;
 	while (i < len)
 	{
-		if (ptr_str[i] == (char)c)
+		if (ptr_str[i] == (unsigned char)c)
 			return (&ptr_str[i]);
 		i++;
 	}

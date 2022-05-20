@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/27 13:02:12 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/05/16 18:44:07 by aldiaz-c         ###   ########.fr       */
+/*   Created: 2022/05/16 11:32:30 by aldiaz-c          #+#    #+#             */
+/*   Updated: 2022/05/16 12:37:20 by aldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t len)
+int	ft_lstsize(t_list *lst)
 {
-	unsigned char	*cop_s1;
-	unsigned char	*cop_s2;
-	size_t			i;
+	int		i;
+	t_list	*temp;
 
-	cop_s1 = (unsigned char *)s1;
-	cop_s2 = (unsigned char *)s2;
 	i = 0;
-	while (i < len)
+	temp = lst;
+	while (temp->next != NULL)
 	{
-		if (cop_s1[i] != cop_s2[i])
-			return (cop_s1[i] - cop_s2[i]);
+		i++;
+		temp = temp->next;
+	}
+	if (temp->next == NULL)
+	{
 		i++;
 	}
-	return (0);
+	return (i);
 }

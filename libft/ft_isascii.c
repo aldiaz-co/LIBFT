@@ -6,13 +6,15 @@
 /*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 18:52:55 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/05/16 10:00:54 by aldiaz-c         ###   ########.fr       */
+/*   Updated: 2022/05/16 18:20:39 by aldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include"libft.h"
+
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 177)
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }
