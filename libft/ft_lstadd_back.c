@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victpier <victpier@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/16 12:45:29 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/05/16 12:55:14 by aldiaz-c         ###   ########.fr       */
+/*   Created: 2022/05/18 13:57:04 by victpier          #+#    #+#             */
+/*   Updated: 2022/05/18 14:00:51 by victpier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*last;
+	t_list	*last_link;
 
 	if (lst && new)
 	{
@@ -22,8 +22,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 			*lst = new;
 		else
 		{
-			last = ft_lstlast(*lst);
-			last -> next = new;
+			last_link = ft_lstlast(*lst);
+			last_link->next = new;
 		}
 	}
 }

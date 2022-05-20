@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victpier <victpier@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/16 12:55:48 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/05/16 13:11:16 by aldiaz-c         ###   ########.fr       */
+/*   Created: 2022/05/18 13:57:31 by victpier          #+#    #+#             */
+/*   Updated: 2022/05/18 14:00:45 by victpier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst && del)
 	{
