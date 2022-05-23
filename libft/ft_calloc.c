@@ -6,7 +6,7 @@
 /*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 11:03:20 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/04/28 11:10:50 by aldiaz-c         ###   ########.fr       */
+/*   Updated: 2022/05/23 13:56:37 by aldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*array;
+	void	*ptr;
 
-	array = malloc(size * count);
-	if (!array)
+	ptr = malloc(size * count);
+	if (!ptr)
 		return (NULL);
-	ft_bzero(array, count * size);
-	return (array);
+	ft_bzero(ptr, count * size);
+	return (ptr);
 }

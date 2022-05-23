@@ -6,15 +6,15 @@
 /*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:53:55 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/05/16 11:09:13 by aldiaz-c         ###   ########.fr       */
+/*   Updated: 2022/05/23 13:10:52 by aldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t len)
+void	*ft_memcpy(void *dst, const void *src, size_t len)
 {
-	size_t				i;
+	size_t	i;
 
 	i = 0;
 	if (!dst && !src)

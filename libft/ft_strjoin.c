@@ -6,7 +6,7 @@
 /*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 16:10:13 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/05/18 16:55:01 by aldiaz-c         ###   ########.fr       */
+/*   Updated: 2022/05/23 13:54:17 by aldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ss1 = (char *)s1;
 	ss2 = (char *)s2;
-	str = malloc(sizeof(str) * (ft_strlen(ss1) + ft_strlen(ss2) + 1));
+	str = malloc(sizeof(char) * (ft_strlen(ss1) + ft_strlen(ss2) + 1));
 	if (!str)
 		return (NULL);
 	ft_strlcpy(str, ss1, ft_strlen(ss1) + 1);

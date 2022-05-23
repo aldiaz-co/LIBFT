@@ -6,7 +6,7 @@
 /*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 12:52:40 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/05/20 14:43:51 by aldiaz-c         ###   ########.fr       */
+/*   Updated: 2022/05/23 10:12:06 by aldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,4 @@ int	ft_atoi(const char *str)
 			return (ft_check_overflow(num, neg));
 	}
 	return (num * neg);
-
 }
