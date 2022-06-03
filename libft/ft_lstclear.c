@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victpier <victpier@student.s19.be>         +#+  +:+       +#+        */
+/*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:58:06 by victpier          #+#    #+#             */
-/*   Updated: 2022/05/18 14:00:48 by victpier         ###   ########.fr       */
+/*   Updated: 2022/06/03 13:29:30 by aldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 			*lst = tmp;
 		}
 	}
-	lst = NULL;
 }

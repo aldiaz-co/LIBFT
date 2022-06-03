@@ -6,13 +6,13 @@
 /*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 16:13:07 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/05/18 16:40:21 by aldiaz-c         ###   ########.fr       */
+/*   Updated: 2022/06/03 16:57:33 by aldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_nbr_len(long long int i)
+int	ft_nbr_len(long long int i)
 {
 	int	count;
 

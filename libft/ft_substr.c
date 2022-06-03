@@ -6,7 +6,7 @@
 /*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 11:39:31 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/05/05 17:53:29 by aldiaz-c         ###   ########.fr       */
+/*   Updated: 2022/06/03 19:09:03 by aldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
 	size_t	new_len;
+	char	*str;
 
 	if (s == NULL)
 		return (NULL);
 	if ((unsigned int)ft_strlen(s) < start)
 		return (ft_calloc(1, sizeof(char)));
-	new_len = ft_strlen(s + start);
+	new_len = ft_strlen(s) - start;
 	if (new_len < len)
 		len = new_len;
 	str = malloc(sizeof(char) * (len + 1));

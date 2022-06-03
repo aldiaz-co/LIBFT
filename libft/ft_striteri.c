@@ -6,7 +6,7 @@
 /*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 16:14:09 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/05/02 13:07:05 by aldiaz-c         ###   ########.fr       */
+/*   Updated: 2022/06/03 18:44:45 by aldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	if (s && f)
@@ -26,3 +26,4 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		}
 	}
 }
+// f take index of the chr, and the &chr 

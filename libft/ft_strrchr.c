@@ -6,7 +6,7 @@
 /*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 14:36:34 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/04/27 12:44:36 by aldiaz-c         ###   ########.fr       */
+/*   Updated: 2022/06/03 19:03:59 by aldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*str;
 	int		len_str;
+	char	*str;
 
 	str = (char *)s;
 	len_str = ft_strlen(str);

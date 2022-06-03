@@ -25,20 +25,17 @@ CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
 
 RM		= rm -f
-
+ 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
 			ar rcs ${NAME} ${OBJS}
 
-all:		norminette ${NAME}
+all:		${NAME}
 
 bonus:  ${OBJS_BONUS}
 		ar r ${NAME} ${OBJS_BONUS}
-
-norminette:
-	norminette
 
 clean:
 			${RM} ${OBJS} ${OBJS_BONUS}
@@ -48,4 +45,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re norminette
+.PHONY:		all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 11:36:06 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/05/05 16:51:30 by aldiaz-c         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:29:38 by aldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ char	*ft_strdup(const char *str)
 	char	*cop_str;
 
 	i = 0;
+	cop_str = (char *)str;
 	cop_str = malloc(sizeof(*cop_str) * ft_strlen((char *)str) + 1);
 	if (!cop_str)
 		return (NULL);

@@ -6,17 +6,24 @@
 /*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 12:30:42 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/05/23 11:58:45 by aldiaz-c         ###   ########.fr       */
+/*   Updated: 2022/06/03 16:53:26 by aldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	ft_bzero(void *str, size_t len)
 {
 	char	*s;
+	size_t	i;
 
+	i = 0;
 	s = str;
-	while (len--)
-		*s++ = 0;
+	while (len > 0)
+	{
+		s[i] = 0;
+		len--;
+		i++;
+	}
 }
