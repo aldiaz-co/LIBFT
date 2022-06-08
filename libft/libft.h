@@ -6,7 +6,7 @@
 /*   By: aldiaz-c <aldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 13:46:21 by aldiaz-c          #+#    #+#             */
-/*   Updated: 2022/06/02 15:33:30 by aldiaz-c         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:51:45 by aldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include<stdlib.h>
 # include<unistd.h>
-# include<stdio.h>
+# include<limits.h>
 
 typedef struct s_list
 {
